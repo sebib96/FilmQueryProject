@@ -52,30 +52,31 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		}
 		return foundFilm;
 	}
-
+	//IT WORKS
 	
 	//______________________________________________________________________________________
-	@Override
+//	@Override
 	public Actor findActorById(int actorId) throws SQLException {
-		Actor actor = null;
-		// ...
-		String sql = "SELECT id, first_name, last_name FROM actor WHERE id = ?";
-
-		Connection conn = DriverManager.getConnection(url, user, pass);
-		PreparedStatement stmt = conn.prepareStatement(sql);
-
-		stmt.setInt(1, actorId);
-		ResultSet actorResult = stmt.executeQuery();
-
-		if (actorResult.next()) {
-			actor = new Actor(actorResult.getInt("id"), actorResult.getString("first_name"),
-					actorResult.getString("last_name"), actorResult.getString("film list")); 
-			actor.setId(actorResult.getInt("id"));
-			actor.setFirstName(actorResult.getString("first_name"));
-			actor.setLastName(actorResult.getString("last_name"));
-		}
-		return actor;
-	}
+		return null;}
+//		Actor actor = null;
+//		// ...
+//		String sql = "SELECT id, first_name, last_name FROM actor WHERE id = ?";
+//
+//		Connection conn = DriverManager.getConnection(url, user, pass);
+//		PreparedStatement stmt = conn.prepareStatement(sql);
+//
+//		stmt.setInt(1, actorId);
+//		ResultSet actorResult = stmt.executeQuery();
+//
+//		if (actorResult.next()) {
+//			actor = new Actor(actorResult.getInt("id"), actorResult.getString("first_name"),
+//					actorResult.getString("last_name"), actorResult.getString("film list")); 
+//			actor.setId(actorResult.getInt("id"));
+//			actor.setFirstName(actorResult.getString("first_name"));
+//			actor.setLastName(actorResult.getString("last_name"));
+//		}
+//		return actor;
+//	}
 	
 	//_____________________________________________________________________________________
 	List<Film> findFilmsByActorId(int actorId) {
