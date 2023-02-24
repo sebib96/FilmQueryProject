@@ -1,11 +1,11 @@
-#Film Query App
+# Film Query App
 
-##Description
+## Description
 
 
-##Technologies Used
+## Technologies Used
 Java
 SQL
 Maven
 
-#Lessons Learned# FilmQueryProject
+# Lessons Learned# FilmQueryProject
