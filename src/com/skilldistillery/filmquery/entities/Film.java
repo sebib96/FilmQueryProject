@@ -1,9 +1,10 @@
 package com.skilldistillery.filmquery.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Film {
-	
+
 	private int id;
 	private String title;
 	private String desc;
@@ -15,8 +16,25 @@ public class Film {
 	private double repCost;
 	private String rating;
 	private String features;
-	
-	
+	private String langName;
+	private List<Actor> filmActors;
+
+	public String getLangName() {
+		return langName;
+	}
+
+	public List<Actor> getFilmActors() {
+		return filmActors;
+	}
+
+	public void setFilmActors(List<Actor> filmActors) {
+		this.filmActors = filmActors;
+	}
+
+	public void setLangName(String langName) {
+		this.langName = langName;
+	}
+
 	public Film(int id, String title, String desc, int releaseYear, int langId, int rentDur, double rentRate,
 			Integer length, double repCost, String rating, String features) {
 		super();
@@ -31,137 +49,109 @@ public class Film {
 		this.repCost = repCost;
 		this.rating = rating;
 		this.features = features;
-	}
 
+	}
 
 	public int getId() {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public String getTitle() {
 		return title;
 	}
 
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 
 	public String getDesc() {
 		return desc;
 	}
 
-
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-
 
 	public int getReleaseYear() {
 		return releaseYear;
 	}
 
-
 	public void setReleaseYear(int releaseYear) {
 		this.releaseYear = releaseYear;
 	}
-
 
 	public int getLangId() {
 		return langId;
 	}
 
-
 	public void setLangId(int langId) {
 		this.langId = langId;
 	}
-
 
 	public int getRentDur() {
 		return rentDur;
 	}
 
-
 	public void setRentDur(int rentDur) {
 		this.rentDur = rentDur;
 	}
-
 
 	public double getRentRate() {
 		return rentRate;
 	}
 
-
 	public void setRentRate(double rentRate) {
 		this.rentRate = rentRate;
 	}
-
 
 	public Integer getLength() {
 		return length;
 	}
 
-
 	public void setLength(Integer length) {
 		this.length = length;
 	}
-
 
 	public double getRepCost() {
 		return repCost;
 	}
 
-
 	public void setRepCost(double repCost) {
 		this.repCost = repCost;
 	}
-
 
 	public String getRating() {
 		return rating;
 	}
 
-
 	public void setRating(String rating) {
 		this.rating = rating;
 	}
-
 
 	public String getFeatures() {
 		return features;
 	}
 
-
 	public void setFeatures(String features) {
 		this.features = features;
 	}
 
-
-	
-	@Override	
+	@Override
 	public String toString() {
-		return "Film [id=" + id + ", title=" + title + ", desc=" + desc + ", releaseYear=" + releaseYear + ", langId="
-				+ langId + ", rentDur=" + rentDur + ", rentRate=" + rentRate + ", length=" + length + ", repCost="
-				+ repCost + ", rating=" + rating + ", features=" + features + "]";
+		return "\n\nFilm ID: " + id + "\tTitle: " + title + "\n\nDescription: " + desc + "\n\nRelease Year: " + releaseYear
+				+ "\tRating: " + rating + "\tFeatures: " + features + "\tLanguage: " + langName + "\nCast: " + filmActors 
+				+ "\n____________________________________________________________________________________________";
 	}
 
-
-	
 	@Override
 	public int hashCode() {
 		return Objects.hash(desc, features, id, langId, length, rating, releaseYear, rentDur, rentRate, repCost, title);
 	}
 
-
-	
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -178,6 +168,5 @@ public class Film {
 				&& Double.doubleToLongBits(repCost) == Double.doubleToLongBits(other.repCost)
 				&& Objects.equals(title, other.title);
 	}
-	
-	
+
 }

@@ -9,13 +9,13 @@ import com.skilldistillery.filmquery.entities.Film;
 public interface DatabaseAccessor {
 	public Film findFilmById(int filmId);
 
+	List<Film> findFilmsByActorId(int actorId);
+
 	public Actor findActorById(int actorId) throws SQLException;
 
-	List<Film> findFilmByActorId(int actorId);
+	public List<Actor> findActorsByFilmId(int filmId);
 
+	public List<Film> findFilmByKeyWord(String keyWord);
 
-	
-  
-  public List<Actor> findActorsByFilmId(int filmId);
+	public String findFilmLanguage(int languageId);
 }
-

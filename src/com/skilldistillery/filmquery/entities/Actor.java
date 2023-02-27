@@ -19,11 +19,10 @@ public class Actor {
 
 	public Actor() {}
 	
-	public Actor(int id, String fn, String ln, List<Film> film) {
+	public Actor(int id, String fn, String ln) {
 		this.id=id;
 		this.firstName=fn;
 		this.lastName=ln;
-		this.films=film;
 	}
 
 	public int getId() {
@@ -52,7 +51,7 @@ public class Actor {
 
 	@Override
 	public String toString() {
-		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "\nActor ID: " + id + "\nName: " + firstName + " " + lastName + "\n\n";
 	}
 
 	@Override
